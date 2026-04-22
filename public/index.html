@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicDwn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="layout">
+      <section class="hero">
+        <p class="eyebrow">MusicDwn</p>
+        <h1>Linkten dogrudan <span>MP3</span> veya <span>MP4</span> al.</h1>
+        <p class="lead">
+          YouTube agirlikli kullanim icin tasarlanmis, ama `yt-dlp` tarafindan
+          desteklenen baska kaynaklarla da calisabilir.
+        </p>
+        <ul class="feature-list">
+          <li>Tek linkte dogrudan dosya indirir.</li>
+          <li>Birden fazla linkte ZIP paket uretir.</li>
+          <li>Tarayici uzerinden calisir, masaustu uygulama gerekmez.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <form id="download-form" class="download-form">
+          <label for="urls">Medya linkleri</label>
+          <textarea
+            id="urls"
+            name="urls"
+            placeholder="https://www.youtube.com/watch?v=...\nhttps://youtu.be/...\nhttps://ornek-site.com/video"
+            required
+          ></textarea>
+
+          <div class="controls">
+            <div>
+              <label for="format">Format</label>
+              <select id="format" name="format">
+                <option value="mp4">MP4</option>
+                <option value="mp3">MP3</option>
+              </select>
+            </div>
+
+            <button type="submit" id="submit-button">Indirmeyi Baslat</button>
+          </div>
+
+          <p class="status" id="status-text">
+            Hazir. Linkleri alt alta girip format sec.
+          </p>
+          <p class="note"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

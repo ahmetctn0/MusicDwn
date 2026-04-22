@@ -1,0 +1,17 @@
+{
+  "name": "musicdwn-site",
+  "version": "1.0.0",
+  "description": "Linklerden mp3 veya mp4 indiren site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "express": "^5.1.0"
+  }
+}
