@@ -8,6 +8,7 @@ const { execFile } = require("child_process");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const IS_WINDOWS = process.platform === "win32";
 
 const ROOT_DIR = __dirname;
 const STORAGE_DIR = path.join(ROOT_DIR, "storage");
@@ -62,6 +63,10 @@ function findExecutable(commandName, extraCandidates = []) {
 }
 
 function getYtDlpPath() {
+  if (!IS_WINDOWS) {
+    return findExecutable("yt-dlp");
+  }
+
   const candidates = [
     path.join(WINGET_PACKAGES_DIR, "yt-dlp.yt-dlp_Microsoft.Winget.Source_8wekyb3d8bbwe", "yt-dlp.exe"),
   ];
@@ -70,6 +75,10 @@ function getYtDlpPath() {
 }
 
 function getFfmpegPath() {
+  if (!IS_WINDOWS) {
+    return findExecutable("ffmpeg");
+  }
+
   const candidates = [
     path.join(
       WINGET_PACKAGES_DIR,
