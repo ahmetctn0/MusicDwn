@@ -28,7 +28,7 @@ form.addEventListener("submit", async (event) => {
   };
 
   submitButton.disabled = true;
-  setStatus("Indirme hazirlaniyor. Link sayisina gore bu biraz surebilir.");
+  setStatus("İndirme hazırlanıyor. Link sayısına göre bu biraz sürebilir.");
 
   try {
     const response = await fetch("/api/download", {
@@ -41,7 +41,7 @@ form.addEventListener("submit", async (event) => {
 
     if (!response.ok) {
       const data = await response.json().catch(() => ({}));
-      throw new Error(data.error || "Indirme istegi basarisiz oldu.");
+      throw new Error(data.error || "İndirme isteği başarısız oldu.");
     }
 
     const disposition = response.headers.get("Content-Disposition") || "";
@@ -50,9 +50,9 @@ form.addEventListener("submit", async (event) => {
     const blob = await response.blob();
 
     downloadBlob(blob, fileName);
-    setStatus("Dosya hazirlandi ve indirme baslatildi.", "success");
+    setStatus("Dosya hazırlandı ve indirme başlatıldı.", "success");
   } catch (error) {
-    setStatus(error.message || "Beklenmeyen bir hata olustu.", "error");
+    setStatus(error.message || "Beklenmeyen bir hata oluştu.", "error");
   } finally {
     submitButton.disabled = false;
   }

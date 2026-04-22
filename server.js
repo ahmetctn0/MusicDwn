@@ -95,7 +95,7 @@ function runYtDlp(args) {
     execFile(getYtDlpPath(), args, { windowsHide: true }, (error, stdout, stderr) => {
       if (error) {
         const detail = (stderr || stdout || error.message).trim();
-        reject(new Error(detail || "yt-dlp komutu basarisiz oldu."));
+        reject(new Error(detail || "yt-dlp komutu başarısız oldu."));
         return;
       }
 
@@ -109,7 +109,7 @@ async function ensureFfmpeg() {
     await runYtDlp(["--version"]);
   } catch (error) {
     throw new Error(
-      "yt-dlp bulunamadi. Once `yt-dlp` kurup PATH icine eklemelisin."
+      "yt-dlp bulunamadı. Önce `yt-dlp` kurup PATH içine eklemelisin."
     );
   }
 
@@ -126,7 +126,7 @@ async function ensureFfmpeg() {
     });
   } catch {
     throw new Error(
-      "ffmpeg bulunamadi. MP3 donusumu ve bazi MP4 birlestirmeleri icin gerekli."
+      "ffmpeg bulunamadı. MP3 dönüşümü ve bazı MP4 birleştirmeleri için gerekli."
     );
   }
 }
@@ -178,7 +178,7 @@ async function downloadMedia(url, format) {
   const exists = fs.existsSync(finalPath);
 
   if (!exists) {
-    throw new Error("Indirilen dosya bulunamadi.");
+    throw new Error("İndirilen dosya bulunamadı.");
   }
 
   return {
@@ -254,12 +254,12 @@ app.post("/api/download", async (req, res) => {
       }
 
       if (error && !res.headersSent) {
-        res.status(500).json({ error: "Dosya gonderilirken hata olustu." });
+        res.status(500).json({ error: "Dosya gönderilirken hata oluştu." });
       }
     });
   } catch (error) {
     res.status(500).json({
-      error: error instanceof Error ? error.message : "Beklenmeyen bir hata olustu.",
+      error: error instanceof Error ? error.message : "Beklenmeyen bir hata oluştu.",
     });
   }
 });
@@ -269,5 +269,5 @@ app.use((_req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server http://127.0.0.1:${PORT} adresinde calisiyor`);
+  console.log(`Server http://127.0.0.1:${PORT} adresinde çalışıyor`);
 });

@@ -1,16 +1,16 @@
 # MusicDwn
 
-Tarayicidan kullanilan basit bir medya indirme sitesidir. Kullanici bir veya daha fazla
-medya linki girer, format olarak `mp3` veya `mp4` secer, backend `yt-dlp` ile dosyayi
-hazirlar ve tarayiciya indirir. Birden fazla link girilirse sonuc ZIP olarak sunulur.
+Tarayıcıdan kullanılan basit bir medya indirme sitesidir. Kullanıcı bir veya daha fazla
+medya linki girer, format olarak `mp3` veya `mp4` seçer, backend `yt-dlp` ile dosyayı
+hazırlar ve tarayıcıya indirir. Birden fazla link girilirse sonuç ZIP olarak sunulur.
 
-## Ozellikler
+## Özellikler
 
-- YouTube agirlikli kullanim icin uygun web arayuzu
-- Tek linkte dogrudan indirme
-- Coklu linkte ZIP cikisi
-- `PATH` eksik olsa bile Windows Winget kurulum klasorlerinden `yt-dlp` ve `ffmpeg` bulma denemesi
-- Ayrik frontend (`public/`) ve backend (`server.js`) yapisi
+- YouTube ağırlıklı kullanım için uygun web arayüzü
+- Tek linkte doğrudan indirme
+- Çoklu linkte ZIP çıkışı
+- `PATH` eksik olsa bile Windows Winget kurulum klasörlerinden `yt-dlp` ve `ffmpeg` bulma denemesi
+- Ayrık frontend (`public/`) ve backend (`server.js`) yapısı
 
 ## Gereksinimler
 
@@ -24,13 +24,13 @@ hazirlar ve tarayiciya indirir. Birden fazla link girilirse sonuc ZIP olarak sun
 npm install
 ```
 
-## Calistirma
+## Çalıştırma
 
 ```bash
 npm start
 ```
 
-Site varsayilan olarak su adreste calisir:
+Site varsayılan olarak şu adreste çalışır:
 
 ```text
 http://127.0.0.1:3000
@@ -38,14 +38,14 @@ http://127.0.0.1:3000
 
 ## Windows Kurulum Notu
 
-Eger sistemde `yt-dlp` ve `ffmpeg` yoksa su komutlarla kurabilirsin:
+Eğer sistemde `yt-dlp` ve `ffmpeg` yoksa şu komutlarla kurabilirsin:
 
 ```powershell
 winget install yt-dlp.yt-dlp
 winget install Gyan.FFmpeg
 ```
 
-Ardindan yeni bir terminal acip siteyi baslat:
+Ardından yeni bir terminal açıp siteyi başlat:
 
 ```powershell
 npm start
@@ -53,7 +53,7 @@ npm start
 
 ## Notlar
 
-- MP3 donusumu ve bazi MP4 birlestirmeleri icin `ffmpeg` gerekir.
-- Backend `server.js`, arayuz ise `public/` altindadir.
-- Yalnizca indirme hakkin olan iceriklerde kullan.
+- MP3 dönüşümü ve bazı MP4 birleştirmeleri için `ffmpeg` gerekir.
+- Backend `server.js`, arayüz ise `public/` altındadır.
+- Yalnızca indirme hakkın olan içeriklerde kullan.
 - `node_modules/` ve `storage/output/` GitHub'a dahil edilmemelidir.
